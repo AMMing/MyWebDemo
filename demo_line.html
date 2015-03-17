@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/line.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/line.js"></script>
+</head>
+<body>
+    <div class="line_content">
+
+    </div>
+    <br />
+    <input id="btn_1" type="button" value="pre" />
+    <input id="btn_2" type="button" value="next" />
+
+    <script type="text/javascript">
+        $(function () {
+            var line = $('.line_content').aming_line({
+                space: 20,
+                border: 2,
+                count: 3,
+                color: ['#bf1729', '#e989e7', '#1a068f']
+            });
+
+            $('#btn_1').click(function () {
+                line.pre();
+            });
+            $('#btn_2').click(function () {
+                line.next();
+            });
+        })
+    </script>
+</body>
+</html>

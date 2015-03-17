@@ -3,7 +3,7 @@
 //
 /////////////////////////////
 var AMingHomePage = function() {
-	var $objs, page = null;
+	var $objs, page, animate = null;
 
 	//jQuery objects
 	$objs = {
@@ -24,7 +24,9 @@ var AMingHomePage = function() {
 	//page js
 	page = {
 		resize: function() {
-			$objs.fix_left.width($objs.window.width() - 500)
+			$objs.fix_left.width($objs.window.width() - 500);
+
+			animate.resetline();
 		},
 		init: function() {
 			$objs.window.bind('resize', this.resize);
@@ -32,13 +34,42 @@ var AMingHomePage = function() {
 	};
 	this.Page = page;
 
+	animate = {
+		$line: null,
+		initline: function() {
+			this.line = $objs.fix_right.find('.bg').aming_line({
+				space: 20,
+				border: 3,
+				count: 5,
+                mintime: 400,
+                maxtime: 1200,
+				color: ['#45C0FF', '#FFAE5F', '#62EFA9', '#C45FFF', '#FF7197']
+			});
+		},
+		resetline: function() {
+			var index = this.line.showindex;
+			this.initline();
+			this.line.setIndex(index);
+		},
+		init: function() {
+			this.initline();
+			$('#btn_1').click(function() {
+				animate.line.pre();
+			});
+			$('#btn_2').click(function() {
+				animate.line.next();
+			});
+		}
+	};
+	this.Animate = animate;
+
 	//init all object init functions.
 	this.Init = function() {
-		var props = this.getPropertys();
+		var props = AmingEx.getPropertys(this);
 		for (var i = 0; i < props.length; i++) {
 			var item = props[i];
 			if (item.type == 'object') {
-				item.value.execFunc('init');
+				AmingEx.execFunc(item.value, 'init');
 			}
 		};
 	};
@@ -49,4 +80,5 @@ var AMingHomePage = function() {
 var homepage = new AMingHomePage();
 $(function() {
 	homepage.Init();
+
 });

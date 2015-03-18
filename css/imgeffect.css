@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.css3effect_content {
+    width: 800px;
+    height: 500px;
+    background: pink;
+    overflow: hidden;
+}
+
+.hide.complete {
+    /*display: none;*/
+}

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/imgeffect.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/imgeffect.js"></script>
+</head>
+<body>
+    <div class="css3effect_content">
+    </div>
+    <br />
+    <input id="btn_1" type="button" value="pre" />
+    <input id="btn_2" type="button" value="next" />
+
+    <script type="text/javascript">
+        $(function () {
+            var effect = $('.css3effect_content').aming_imgeffect({
+                center: true,
+                margin: 40,
+                imgs: [
+                    'images/nav_1.png',
+                    'images/nav_2.png',
+                    'images/nav_3.png',
+                    'images/nav_4.png',
+                    'images/nav_5.png',
+                    'images/nav_6.png'
+                ]
+            });
+
+            $('#btn_1').click(function () {
+                effect.pre();
+            });
+            $('#btn_2').click(function () {
+                effect.next();
+            });
+        })
+    </script>
+</body>
+</html>

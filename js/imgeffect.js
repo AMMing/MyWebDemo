@@ -66,6 +66,8 @@
                 $img.css({
                     margin: margin_top + 'px ' + margin_left + 'px',
                 });
+                var $div = $img.parent();
+                $div.addClass('complete');
 
                 $img.show();
             };
@@ -202,6 +204,14 @@
                 animate_next(obj.showindex, index);
                 obj.showindex = index;
             };
+            this.resize = function () {
+                w = $renderTo.width();
+                h = $renderTo.height();
+                var $imgs = $renderTo.find('.img_div.complete img');
+                jQuery.each($imgs, function (i, x) {
+                    set_img(x, jQuery(x));
+                });
+            }
 
             return this;
         }

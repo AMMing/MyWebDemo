@@ -27,6 +27,7 @@ var AMingHomePage = function () {
             $objs.fix_left.width($objs.window.width() - 500);
 
             animate.resetline();
+            animate.reseteffect();
         },
         init: function () {
             $objs.window.bind('resize', this.resize);
@@ -49,6 +50,8 @@ var AMingHomePage = function () {
                 color: ['#45C0FF', '#FFAE5F', '#62EFA9', '#C45FFF', '#FFEF80', '#FF7197'],
                 bgcolor: ['#D7F1FF', '#FFEFDF', '#D5FFEA', '#F4E0FF', '#FFFDF2', '#FFEAF0']
             });
+        },
+        initeffect: function () {
             this.$effect = $objs.fix_right.find('.content').aming_imgeffect({
                 center: true,
                 margin: 60,
@@ -71,6 +74,12 @@ var AMingHomePage = function () {
             this.initline();
             this.$line.setIndex(index);
         },
+        reseteffect: function () {
+            if (this.$effect == null)
+                return;
+
+            this.$effect.resize();
+        },
         auto: function () {
             setInterval(function () {
                 animate.$line.next();
@@ -79,6 +88,7 @@ var AMingHomePage = function () {
         },
         init: function () {
             this.initline();
+            this.initeffect();
             this.auto();
         }
     };

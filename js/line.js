@@ -43,7 +43,6 @@
             var column = w / config.space;
             divList = new Array();
 
-            console.log(column);
             var randomColor = function () {
                 var index = Math.floor(Math.random() * $.fn.color_list.length);
 

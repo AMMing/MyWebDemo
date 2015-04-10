@@ -11,28 +11,39 @@
 			return new adminAccessModel($sqlval);
 		}
 
-		function getList(){
-			$sqlstr= "SELECT * FROM `$this->tableName`";
+		function getList($id){
+			$where = array(
+				'admin_id' => $id
+				);
 
-			return parent::baseGetList($sqlstr);
+			return parent::baseGetListWhere($where);
 		}
 
-		function get($id){
-            if(!is_int($id)){
-            	return null;
-            }
-			$sqlstr= "SELECT * FROM `$this->tableName` WHERE `admin_id`=$id";
+		function get($aid,$cid){
+			$where=array(
+				'admin_id'=>$aid,
+				'competence_id'=>$cid
+				);
 
-			return parent::baseGetItem($sqlstr);
+			return parent::baseGetItemWhere($where);
 		}
 
 		function add($aid,$cid){
-			$item = new stdClass();
-			$item->admin_id=$aid;
-			$item->competence_id=$cid;
+			$obj=array(
+				'admin_id'=>$aid,
+				'competence_id'=>$cid
+				);
 
-			return parent::baseInsert($item);
+			return parent::baseInsert($obj,$obj);
 		}
 
+		function delete($aid,$cid){
+			$obj=array(
+				'admin_id'=>$aid,
+				'competence_id'=>$cid
+				);
+
+			return parent::baseDelete($obj,$obj);
+		}
 	}
 ?>

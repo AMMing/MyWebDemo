@@ -1,7 +1,7 @@
 <?php  
 
 	/**
-	* mysql helper
+	* AdminTableSql
 	*/
 	class AdminTableSql extends BasaSql
 	{
@@ -12,38 +12,59 @@
 		}
 
 		function getList(){
-			$sqlstr= "SELECT * FROM `$this->tableName`";
-
-			return parent::baseGetList($sqlstr);
+			return parent::baseGetListWhere(null);
 		}
 
 		function get($id){
-            if(!is_int($id)){
-            	return null;
-            }
-			$sqlstr= "SELECT * FROM `$this->tableName` WHERE `Id`=$id";
+			$where = array(
+				'id' => $id
+				);
 
-			return parent::baseGetItem($sqlstr);
+			return parent::baseGetItemWhere($where);
 		}
 
 		function add($name, $password){
 			$nowdate=date('Y-m-d H:i:s',time());
 
-			$item = new stdClass();
-			$item->name=$name;
-			$item->password=$password;
-			$item->create_date=$nowdate;
-			$item->login_date=$nowdate;
-			$item->login_ip='unlogin';
+			$obj=array(
+				'name'=>$name,
+				'password'=>$password,
+				'create_date'=>$nowdate,
+				'login_date'=>$nowdate,
+				'login_ip'=>'unlogin'
+				);
 
-			return parent::baseInsertWhere($item,"`name`='$name'");
+			$where=array('name'=>$name);
+
+			return parent::baseInsertWhere($obj,$where);
 		}
 
 		function update($id, $password){
-			$item = new stdClass();
-			$item->password=$password;
+			$obj=array(
+				'password'=>$password
+				);
+			$where=array(
+				'Id'=>$id
+				);
 
-			return parent::baseUpdate($item,"`Id`=$id");
+			return parent::baseUpdate($obj,$where);
+		}
+
+		function delete($id){
+			$where=array(
+				'Id'=>$id
+				);
+
+			return parent::baseDelete($where);
+		}
+
+		function login($name,$pwd){
+			$where = array(
+				'name' => $name,
+				'password' => $pwd
+				);
+
+			return !is_null(parent::baseGetItemWhere($where));
 		}
 	}
 ?>

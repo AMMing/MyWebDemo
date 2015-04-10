@@ -38,7 +38,7 @@
 
 			return $row;
 		}
-		function addItem($sql){
+		function exec($sql){
 			$conn =$this->getConn();
 
 			$result=mysql_query($sql,$conn);

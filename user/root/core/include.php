@@ -17,7 +17,8 @@
 	include_once(CORE_PATH.'/helper/file_helper.php');
 	// method
 	// sql helper
-	include_once(CORE_PATH.'/sqlhelper/helper.php');
+	// include_once(CORE_PATH.'/sqlhelper/helper.php');
+	include_once(CORE_PATH.'/sqlhelper/pdohelper.php');
 	include_once(CORE_PATH.'/sqlhelper/basaSql.php');
 	include_once(CORE_PATH.'/sqlhelper/admin_access.php');
 	include_once(CORE_PATH.'/sqlhelper/admin_table.php');

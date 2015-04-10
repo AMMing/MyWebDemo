@@ -8,11 +8,13 @@ var AMingHomePage = function () {
     //jQuery objects
     $objs = {
         window: null,
+        main_content: null,
         fix_content: null,
         fix_left: null,
         fix_right: null,
         init: function () {
             this.window = jQuery(window);
+            this.main_content = jQuery('body > div');
             this.fix_content = jQuery('.fix_content');
             this.fix_left = this.fix_content.find('.left');
             this.fix_right = this.fix_content.find('.right');
@@ -24,9 +26,9 @@ var AMingHomePage = function () {
     //page js
     page = {
         resize: function () {
-            $objs.fix_left.width($objs.window.width() - 500);
+            $objs.fix_left.width($objs.main_content.width() - 500);
 
-            animate.resetline();
+            // animate.resetline();
             animate.reseteffect();
         },
         init: function () {

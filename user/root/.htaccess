@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^(www.)?client.amm.moe$
+RewriteCond %{REQUEST_URI} !^/client/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /client/$1
+RewriteCond %{HTTP_HOST} ^(www.)?client.amm.moe$
+RewriteRule ^(/)?$ client/index.php [L]
+
+RewriteCond %{HTTP_HOST} ^(www.)?web.amm.moe$
+RewriteCond %{REQUEST_URI} !^/web/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /web/$1
+RewriteCond %{HTTP_HOST} ^(www.)?web.amm.moe$
+RewriteRule ^(/)?$ web/index.php [L]

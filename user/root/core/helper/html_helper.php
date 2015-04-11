@@ -1,22 +1,17 @@
 <?php
 
 	/**
-	* 
+	* Html Helper
 	*/
 	class HtmlHelper
 	{
-		function css($url){
+		//引用css文件
+		static function css($url){
 			echo '<link href="'.$url.'?ver='.JsCssVer.'" rel="stylesheet" />';
 		}
-
-		function js($url){
+		//引用js文件
+		static function js($url){
 			echo '<script src="'.$url.'?ver='.JsCssVer.'"></script>';
-		}
-		function downloadUrl($key){
-			return '/'.$key.'.zip';
-		}
-		function views($name){
-			include_once(SITE_ROOT_PATH.'/views/'.$name.'.php');
 		}
 	}
 ?>

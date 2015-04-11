@@ -66,23 +66,33 @@
 			// 	;
 		}
 		//获取缓存内容如果不存在就从方法获取
-		public static function getCache($area, $keys, $getMethod){
+		public static function getCache($area, $keys, $getMethod, $args){
 			$cacheKey = CacheHelper::getKey($keys);
 			$path = CacheHelper::getPath($area,$cacheKey);
 			$result = CacheHelper::getCacheContent($path);
 
 			if (CacheHelper::isCacheOrTimeout($result)) {
-				$content = $getMethod();
+				$content = $getMethod($args, $keys);
 				$result = array(
 					'from' => 'cache',
 					'outtime' => strtotime('+'.CacheOutTime.' minute'),
 					'data' => $content
 					);
-				CacheHelper::saveCacheContent($path, $result);
+				if(!is_null($content)){
+					CacheHelper::saveCacheContent($path, $result);
+				}
 				$result['from'] ='method';
 			}
 
 			return $result;
+		}
+		//获取缓存对象中的data
+		public static function getData($cacheObj){
+			if(is_array($cacheObj)){
+				return $cacheObj['data'];
+			}else{
+				return $cacheObj->data;
+			}
 		}
 		//删除缓存文件
 		public static function deleteCache($area, $keys){

@@ -36,4 +36,6 @@
 	include_once(CORE_PATH.'/sqlhelper/goods_table.php');
 	include_once(CORE_PATH.'/sqlhelper/customer_goods_price.php');
 
+	// cache helper
+	include_once(CORE_PATH.'/method/cache/customer_goods_price.php');
 ?>

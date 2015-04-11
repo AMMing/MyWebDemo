@@ -11,7 +11,6 @@
 
 		function __construct()
 		{
-			$this->objectHelper=new ObjectHelper();
 			// $this->sqlhelper=new MYSQLHelper();
 			$this->sqlhelper=new PDOHelper();
 		}

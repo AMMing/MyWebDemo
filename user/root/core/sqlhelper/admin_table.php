@@ -3,16 +3,16 @@
 	/**
 	* AdminTableSql
 	*/
-	class AdminTableSql extends BasaSql
+	class AdminTableSql extends SqlBase
 	{
 		public $tableName='admin_table';
 
 		protected function newModel($sqlval){
-			return new adminTableModel($sqlval);
+			return new AdminTableModel($sqlval);
 		}
 
 		function getList(){
-			return parent::baseGetListWhere(null);
+			return parent::baseGetListWhere();
 		}
 
 		function get($id){
@@ -64,7 +64,7 @@
 				'password' => $pwd
 				);
 
-			return !is_null(parent::baseGetItemWhere($where));
+			return parent::baseGetItemWhere($where);
 		}
 	}
 ?>

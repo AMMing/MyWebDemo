@@ -3,7 +3,7 @@
 	/**
 	* 
 	*/
-	class htmlHelper
+	class HtmlHelper
 	{
 		function css($url){
 			echo '<link href="'.$url.'?ver='.JsCssVer.'" rel="stylesheet" />';

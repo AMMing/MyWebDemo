@@ -3,7 +3,7 @@
 	/**
 	* areaTableModel
 	*/
-	class competenceModel
+	class CompetenceModel
 	{
 		public $Id;
 

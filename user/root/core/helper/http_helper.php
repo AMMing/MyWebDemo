@@ -3,14 +3,13 @@
 	/**
 	* 
 	*/
-	class httpHelper
+	class HttpHelper
 	{
 		function getIP() {
 			$ip =$_SERVER["REMOTE_ADDR"];
 
 			return $ip;
 		}
-
 
 		function redirect($url){
 			header('Location: '.$url);
@@ -27,6 +26,7 @@
 			echo $json;
 			exit;
 		}
+
 		function get($key){
 			return $_GET[$key];
 		}
@@ -42,6 +42,7 @@
 			}
 			return $val;
 		}
+
 		function views($name){
 			include_once(SITE_ROOT_PATH.'/views/'.$name.'.php');
 		}

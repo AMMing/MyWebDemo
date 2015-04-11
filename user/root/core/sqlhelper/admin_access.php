@@ -3,12 +3,12 @@
 	/**
 	* mysql helper
 	*/
-	class AdminAccessSql extends BasaSql
+	class AdminAccessSql extends SqlBase
 	{
 		public $tableName='admin_access';
 
 		protected function newModel($sqlval){
-			return new adminAccessModel($sqlval);
+			return new AdminAccessModel($sqlval);
 		}
 
 		function getList($id){

@@ -3,7 +3,7 @@
 	/**
 	* 
 	*/
-	class fileHelper
+	class FileHelper
 	{
 		function read($path){
 			$fp=fopen($path, 'r');

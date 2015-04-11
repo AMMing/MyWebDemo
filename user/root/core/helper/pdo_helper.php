@@ -3,7 +3,7 @@
 	/**
 	* mysql helper
 	*/
-	class pdoHelper
+	class PDOHelper
 	{
 		function getPDO(){
 			try {

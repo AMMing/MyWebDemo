@@ -3,7 +3,7 @@
 	/**
 	* areaTableModel
 	*/
-	class customerInformationModel
+	class CustomerInformationModel
 	{
 		public $Id;
 

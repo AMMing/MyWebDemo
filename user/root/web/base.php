@@ -8,6 +8,8 @@
 	include_once(CORE_PATH.'/include.php');
 
 	//http
-	$http = new httpHelper();
+	$http = new HttpHelper();
+
+	header("Content-Type: text/html; charset=utf-8");
 
 ?>

@@ -1,0 +1,109 @@
+@media screen and (min-width: 1500px ) and (max-width: 1800px){
+    .main_content ul {
+        width: 920px;
+    }
+    .main_content li > a > div {
+        width: 260px;
+        margin: 20px;
+    }
+    .main_content li > a > div img {
+        width: 150px;
+        height: 150px;
+        -moz-border-radius: 80px;
+        -webkit-border-radius: 80px;
+        border-radius: 80px;
+    }
+    .main_content li.full > a > div span {
+        left: 180px;
+        top: 0;
+        font-size: 34px;
+    }
+    .main_content li > a > div div {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .main_content li > a > div span {
+        font-size: 28px;
+        margin-top: -26px;
+    }
+    .main_content li.full > a > div div {
+        left: 180px;
+        top: 52px;
+    }
+
+
+    .otherlink li {
+        margin: 10px 0;
+    }
+    .main_content .otherlink li > a > div img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        margin-left: 10px;
+    }
+    .main_content .otherlink li > a > div {
+        width: 220px;
+        height: 65px;
+        margin: 5px;
+    }
+    .main_content .otherlink li > a > div span {
+        margin-top: -25px;
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (min-width: 1800px ){
+    .main_content ul {
+        width: 1250px;
+    }
+    .main_content li > a > div {
+        width: 355px;
+        margin: 30px;
+    }
+    .main_content li > a > div img {
+        width: 200px;
+        height: 200px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        border-radius: 100px;
+        margin: 0 80px;
+    }
+    .main_content li.full > a > div span {
+        left: 250px;
+        top: 0;
+        font-size: 50px;
+    }
+    .main_content li > a > div div {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .main_content li > a > div span {
+        font-size: 36px;
+        margin-top: -30px;
+    }
+    .main_content li.full > a > div div {
+        left: 250px;
+        top: 70px;
+    }
+
+
+    .otherlink li {
+        margin: 10px 0;
+    }
+    .main_content .otherlink li > a > div img {
+        width: 80px;
+        height: 80px;
+        border-radius: 72px;
+        margin-left: 10px;
+    }
+    .main_content .otherlink li > a > div {
+        width: 300px;
+        height: 90px;
+        margin: 5px;
+    }
+    .main_content .otherlink li > a > div span {
+        margin-top: -30px;
+        font-size: 22px;
+    }
+}

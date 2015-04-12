@@ -28,6 +28,9 @@ var AMingHomePage = function () {
         resize: function () {
             $objs.fix_left.width($objs.main_content.width() - 500);
 
+            $objs.fix_content.css({
+                right:($objs.window.width()-1100)/2
+            });
             // animate.resetline();
             animate.reseteffect();
         },

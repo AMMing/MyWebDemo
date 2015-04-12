@@ -32,11 +32,10 @@ body {
 }
 .main_frame{
     margin: 0 auto;
-    border: 1px solid #DEC0FF;
 }
 .content_frame{
     position: relative;
-    height: 800px;
+    /*height: 800px;*/
 }
 .fix_content {
     /*background: yellow;*/

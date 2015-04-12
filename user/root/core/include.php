@@ -26,7 +26,6 @@
 	include_once(CORE_PATH.'/helper/ex/getPingYing.php');
 	// method
 
-
 	// sql helper
 	include_once(CORE_PATH.'/sqlhelper/admin_access.php');
 	include_once(CORE_PATH.'/sqlhelper/admin_table.php');
